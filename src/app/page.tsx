@@ -1,4 +1,4 @@
-import Login from "../components/Login/Login";
+import Login from "../components/login/Login";
 import ErrorBoundary from "../pages/errorBoundary";
 export default function Home() {
   return (
