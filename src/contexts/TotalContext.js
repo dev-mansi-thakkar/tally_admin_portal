@@ -6,9 +6,12 @@ const TotalContext = createContext();
 
 const TotalProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
+  const updateTotal = (newTotal) => {
+    setTotal(newTotal);
+  };
 
   return (
-    <TotalContext.Provider value={{ total }}>
+    <TotalContext.Provider value={{ total, updateTotal }}>
       {children}
     </TotalContext.Provider>
   );

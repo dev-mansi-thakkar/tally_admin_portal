@@ -11,7 +11,7 @@ const InsightLayout = () => {
     const { total } = useContext(TotalContext);
     return (
         <div className='grid grid-cols-12 my-5 gap-3 mx-2'>
-            <div className="col-span-2">
+            <div className="col-span-full md:col-span-2">
                 <Card isPrimary={true}>
                     <div className={styles.cardHeading}>
                         Total
@@ -22,7 +22,7 @@ const InsightLayout = () => {
                 </Card>
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-full md:col-span-2">
                 <Card>
                     <div className={`${styles.cardHeading} font-normal text-secondary`}>
                         Percentage Assessed
@@ -36,7 +36,7 @@ const InsightLayout = () => {
                 </Card>
             </div>
 
-            <div className='col-span-6'>
+            <div className='col-span-full md:col-span-6'>
                 <Card>
                     <div className={`${styles.cardHeading} font-normal text-secondary text-center`}>
                         Submission Quality
@@ -62,7 +62,7 @@ const InsightLayout = () => {
                 </Card>
             </div>
 
-            <div className="col-span-2">
+            <div className="col-span-full md:col-span-2">
                 <Card>
                     <div className={`${styles.cardHeading} text-secondary`}>
                         Interview Shortlist
@@ -72,9 +72,6 @@ const InsightLayout = () => {
                     </div>
                 </Card>
             </div>
-
-
-
         </div>
     );
 }

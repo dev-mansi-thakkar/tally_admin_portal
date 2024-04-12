@@ -1,7 +1,8 @@
 'use client';
 
 import { Tooltip } from 'react-tooltip'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import {TotalContext} from "../../contexts/TotalContext";
 
 // styles
 import styles from './Tab.module.css'
@@ -20,8 +21,9 @@ const getStyles = (rating) =>{
     return `${getColor[rating]}`
 }
 
-const CustomTable = ({activeTab}) => {
+const CustomTable = ({activeTab, searchInput}) => {
     const [records,setRecords] = useState(Data);
+    const { updateTotal } = useContext(TotalContext);
 
     useEffect(() => {
         const tableHeader = document.querySelector('.sticky-header');
@@ -47,7 +49,7 @@ const CustomTable = ({activeTab}) => {
     useEffect(()=>{
         let totalCount = 0
         if(activeTab === 'All'){
-            setRecords(Data);
+            setRecords(Data.sort((a, b) => a.id - b.id));
             totalCount = Data.length;
         } else if(activeTab === "Top20"){
             const sortedData = Data.sort((a, b) => b.overallScore - a.overallScore);
@@ -60,15 +62,36 @@ const CustomTable = ({activeTab}) => {
             setRecords(filteredRecords);
             totalCount = filteredRecords.length;
         }
-        // updateTotal(totalCount);
+        updateTotal(totalCount);
     },[activeTab]);
+
+    useEffect(()=>{
+       
+        if(searchInput.length > 2){
+            let totalCount = 0;
+            const pattern = searchInput;
+            const flags = "gi"; 
+            const regex = new RegExp(pattern, flags);
+            const filteredRecords = records.filter(record => record.name.match(regex));  
+            totalCount = filteredRecords.length;
+            setRecords(filteredRecords);
+            updateTotal(totalCount);
+        }
+        if(!searchInput){
+            let totalCount = 0;
+            setRecords(Data.sort((a, b) => a.id - b.id));
+            totalCount = Data.length;
+            updateTotal(totalCount);
+        }
+        
+    }, [searchInput])
     
     return (
             <div className="shadow-md scrollable rounded-lg max-h-[calc(100vh-40vh)]">
                 <table className="min-w-full bg-white">
                     <thead className="bg-gray-50 sticky-header">
                         <tr>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Id</th>
+                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">#</th>
                             <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Name</th>
                             <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Submission Time</th>
                             <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Overall Score</th>

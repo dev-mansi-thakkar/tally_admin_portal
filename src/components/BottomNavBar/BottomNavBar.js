@@ -1,12 +1,19 @@
 'use client'
 import React, { useState } from "react";
 import Image from "next/image";
+import Cookies from "js-cookie";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import styles from "./BottomNavBar.module.css";
 
 const BottomNavBar = () => {
     const [showVerticalBar, setShowVerticalBar] = useState(false);
     const [iconImage, setIconImage] = useState("/assets/icons/more.png");
+    const router = useRouter();
+    const handleLogout = () => {
+        Cookies.set("loggedin", "false");
+        router.push("/");
+    }
 
     const toggleVerticalBar = () => {
         setShowVerticalBar(!showVerticalBar);
@@ -96,7 +103,7 @@ const BottomNavBar = () => {
                             <li>
                                 <Link href="/">
                                     <Image
-                                        src="/assets/icons/shieldcheck.png"
+                                        src="/assets/icons/shieldCheck.png"
                                         alt="Icon 3"
                                         width={40}
                                         height={40}
@@ -112,6 +119,14 @@ const BottomNavBar = () => {
                                         height={40}
                                     />
                                 </Link>
+                            </li>
+                            <li onClick={handleLogout}>
+                                <Link href="/"> <Image
+                                    src="/assets/icons/logout.png"
+                                    alt="Logo"
+                                    width={32}
+                                    height={32}
+                                /></Link>
                             </li>
                         </ul>
                     </div>
