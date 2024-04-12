@@ -105,12 +105,13 @@ const SidebarLayout = () => {
                                     height={32}
                                 /></Link>
                             </li>
-                            <li>
+                            <li onClick={handleLogout}>
                                 <Link href="/" onClick={handleLogout}> <Image
                                     src="/assets/icons/logout.png"
                                     alt="Logo"
                                     width={32}
                                     height={32}
+                                    onClick={handleLogout}
                                 /></Link>
                             </li>
                         </ul>
