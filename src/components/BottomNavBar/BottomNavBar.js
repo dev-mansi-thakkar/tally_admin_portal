@@ -13,6 +13,7 @@ const BottomNavBar = () => {
     const handleLogout = () => {
         Cookies.set("loggedin", "false");
         router.push("/");
+        window.location.reload();
     }
 
     const toggleVerticalBar = () => {

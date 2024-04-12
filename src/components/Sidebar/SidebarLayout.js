@@ -11,6 +11,7 @@ const SidebarLayout = () => {
     const handleLogout = () => {
         Cookies.set("loggedin", "false");
         router.push("/");
+        window.location.reload();
     }
     return (
         <div className={styles.container}>
