@@ -90,34 +90,34 @@ const CustomTable = ({activeTab, searchInput}) => {
             <div className="shadow-md scrollable rounded-lg max-h-[calc(100vh-40vh)]">
                 <table className="min-w-full bg-white">
                     <thead className="bg-gray-50 sticky-header">
-                        <tr>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">#</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Name</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Submission Time</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Overall Score</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Overall Rating</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Rag Implementation</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Fine-Tuning Language Model</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">MultiModal AI Integration</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Python & Frameworks</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">AI Model Deployment</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Analyzing User Feedback (RLHF)</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Problem Solving Capabilities</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Teamwork & Communications</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Motivation & Adaptability</th>
-                            <th className="px-4 py-2 text-xs sm:text-sm text-gray-600">Add to interview shortlist</th>
+                        <tr className={styles.headerRow}>
+                            <th className="px-2 py-2 text-xs text-gray-600">#</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Name</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Submission Time</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Overall Score</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Overall Rating</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Rag Implementation</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Fine-Tuning Language Model</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">MultiModal AI Integration</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Python & Frameworks</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">AI Model Deployment</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Analyzing User Feedback (RLHF)</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Problem Solving Capabilities</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Teamwork & Communications</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Motivation & Adaptability</th>
+                            <th className="px-2 py-2 text-xs text-gray-600">Add to interview shortlist</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white text-gray-900 font-satoshi text-xs sm:text-sm">
+                    <tbody className="bg-white text-gray-900 font-satoshi text-xs text-sm">
                         {records.map((item, index) => (
                             <tr key={index}>
 
                                 <td className="px-4 py-2 whitespace-nowrap">{item.id}</td>
-                                <td className="px-4 py-2 whitespace-nowrap">{item.name}</td>
-                                <td className="px-4 py-2 whitespace-nowrap">{item.submissionTime}</td>
-                                <td className="px-4 py-2 whitespace-nowrap">{item.overallScore}</td>
-                                <td className="px-4 py-2 whitespace-nowrap">{item.overallRating}</td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-3 py-2 whitespace-nowrap">{item.name}</td>
+                                <td className="px-3 py-2 whitespace-nowrap">{item.submissionTime}</td>
+                                <td className="px-3 py-2 whitespace-nowrap">{item.overallScore}</td>
+                                <td className="px-3 py-2 whitespace-nowrap">{item.overallRating}</td>
+                                <td className="px-2 py-2 text-center relative">
                                     <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.ragImplementation)} block`}
                                         data-tooltip-id="good-tooltip" 
@@ -125,7 +125,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="good-tooltip" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                     <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.fineTuningLanguageModel)} block`}
                                         data-tooltip-id="excellent-tooltip" 
@@ -133,7 +133,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="excellent-tooltip" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                     <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.multiModalAIIntegration)} block`}
                                         data-tooltip-id="good-tooltip2" 
@@ -141,7 +141,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="good-tooltip2" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                     <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.pythonAndFrameworks)} block`}
                                         data-tip="Satisfactory"
@@ -150,7 +150,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="satisfactory-tooltip" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                 <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.aiModelDeployment)} block`}
                                         data-tooltip-id="good-tooltip3" 
@@ -158,7 +158,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="good-tooltip3" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                     <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.analyzingUserFeedbackRLHF)} block`}
                                         data-tip="Needs Improvement"
@@ -167,7 +167,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="needs-improvement" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                 <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.problemSolvingCapabilities)} block`}
                                         data-tooltip-id="good-tooltip4" 
@@ -175,7 +175,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="good-tooltip4" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                 <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.teamworkAndCommunications)} block`}
                                         data-tooltip-id="excellent-tooltip2" 
@@ -183,7 +183,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     ></span>
                                     <Tooltip id="excellent-tooltip2" />
                                 </td>
-                                <td className="px-4 py-2 text-center relative">
+                                <td className="px-2 py-2 text-center relative">
                                 <span
                                         className={`w-4 h-4 rounded-full mx-auto ${getStyles(item.motivationAndAdaptability)} block`}
                                         data-tooltip-id="excellent-tooltip3" 
@@ -192,7 +192,7 @@ const CustomTable = ({activeTab, searchInput}) => {
                                     <Tooltip id="excellent-tooltip3" />
                                 </td>
                                 
-                                <td className="px-4 py-2 text-center">
+                                <td className="px-2 py-2 text-center">
                                     <input className={styles.inputCheckbox} type="checkbox" />
                                 </td>
                             </tr>
