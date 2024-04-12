@@ -120,8 +120,8 @@ const BottomNavBar = () => {
                                     />
                                 </Link>
                             </li>
-                            <li onClick={handleLogout}>
-                                <Link href="/"> <Image
+                            <li >
+                                <Link href="/" onClick={handleLogout}> <Image
                                     src="/assets/icons/logout.png"
                                     alt="Logo"
                                     width={32}
