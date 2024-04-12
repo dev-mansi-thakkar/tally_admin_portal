@@ -1,0 +1,60 @@
+.bottomNavBar {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+}
+
+.horizontalBar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.horizontalIcons {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.verticalBar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-right: 30px;
+    border-radius: 10px;
+    height: 150px;
+}
+
+.verticalIcons {
+    list-style: none;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.verticalIcons li:hover {
+    background: linear-gradient(to right, rgba(17, 4, 243), rgba(14, 222, 249));
+    border-radius: 43px;
+}
+
+.bottomNavBar .horizontalIcons li:not(.toggleMenu):hover {
+    background: linear-gradient(to right, rgba(17, 4, 243), rgba(14, 222, 249));
+    border-radius: 43px;
+}
+
+.bottomNavBar .toggleMenu:hover {
+    background: transparent;
+}

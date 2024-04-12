@@ -1,0 +1,1 @@
+export const tabFilters = ['All', 'Top20', 'Excellent', 'Good', 'Satisfactory', 'Needs Improvement'];
