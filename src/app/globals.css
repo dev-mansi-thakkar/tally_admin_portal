@@ -22,12 +22,18 @@
   }
 }
 
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('/assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-bg);
-  /* background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+  font-family: 'Satoshi-Regular'!important;
 }
 
 .react-tooltip{
