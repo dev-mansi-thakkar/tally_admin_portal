@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background-bg:#fafac;
+  --bg-white:#ffffff;
+  --text-primary:#4C7EFF;
+  --text-secondary : #6E6E78;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --bg-white:#ffffff;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--background-bg);
+  /* background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+}
+
+.react-tooltip{
+  z-index: 10;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1; 
+}
+
+.sticky-header.sticky {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.scrollable{
+  overflow:auto;
+  scrollbar-color: #aab7cf;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+  margin: 0 15px;
+}
+ 
+/* Track */
+.scrollable::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #dbe5ed;
+  border-radius: 10px;  
+}
+ 
+/* Handle */
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #e4e5e5;
+  border-radius: 10px;
+}
+
+.circleGreen {
+  background-color: #0CC96E;
+  cursor: pointer;
+}
+
+.circleRed {
+  background-color: #FF004D;
+  cursor: pointer;
+}
+
+.circleOrange {
+  background-color: #FF9C29;
+  cursor: pointer;
+}
+
+.circleBlue {
+  background-color: #4C7EFF;
+  cursor: pointer;
+}
+
+.text-primary{
+  color: var(--text-primary);
+}
+
+.text-secondary{
+  color: var(--text-secondary);
+}
+
+.bg-white{
+  background-color: var(--bg-white);
+}
+
+.bg-primary{
+  background-image: linear-gradient(#5F56FF, #0EDEF9);
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
